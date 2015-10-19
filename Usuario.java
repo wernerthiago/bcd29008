@@ -78,14 +78,14 @@ public class Usuario {
     }
     
     public void escreverNoArquivo() throws IOException{
-        FileWriter file = new FileWriter("C:\\Users\\alvinegro\\Google Drive\\FACULDADE\\8fase\\BCD29008\\projetos\\CadastroDeUsuarios\\JSON.txt", true);
+        FileWriter file = new FileWriter("\\home\\werner\\bcd29008\\JSON.txt", true);
         PrintWriter recfile = new PrintWriter(file);
         String cell = "";
-        String json = "{\"nome\":\"" + this.nome + "\":\"logradouro\":\""+ this.endereco.getLogradouro() +"\":\"numero\":\""+ this.endereco.getNumero() +"\":\"bairro\":\""+ this.endereco.getBairro() +"\":\"cidade\":\""+ this.endereco.getCidade() +"\":\"estado\":\""+ this.endereco.getEstado() +"\":\"pais\":\""+ this.endereco.getPais() +"\":\"cpfoupassaporte\":\""+ this.id +"\":";
+        String json = "{\"nome\":\"" + this.nome + "\",\"logradouro\":\""+ this.endereco.getLogradouro() +"\",\"numero\":\""+ this.endereco.getNumero() +"\",\"bairro\":\""+ this.endereco.getBairro() +"\",\"cidade\":\""+ this.endereco.getCidade() +"\",\"estado\":\""+ this.endereco.getEstado() +"\",\"pais\":\""+ this.endereco.getPais() +"\",\"cpfoupassaporte\":\""+ this.id +"\",";
         int n = telefone.size();
         int aux = 0;
         while(aux != n){
-            cell = cell + "\"telefone" + aux + "\":\"" + telefone.get(aux) + "\":";
+            cell = cell + "\"telefone" + aux + "\":\"" + telefone.get(aux) + "\",";
             aux++;
         }
         cell = cell.substring(0, cell.length() - 1);
